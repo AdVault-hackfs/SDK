@@ -1,0 +1,25 @@
+{
+  "name": "advault_api",
+  "version": "1.0.0",
+  "description": "advault provides the ad infrastructure for web3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdVault-hackfs"
+  },
+  "keywords": [
+    "ad",
+    "infrastructure",
+    "sdk",
+    "api"
+  ],
+  "author": "dhruv varshney",
+  "license": "ISC",
+  "dependencies": {
+    "@lighthouse-web3/sdk": "^0.3.3",
+    "express": "^4.19.2"
+  }
+}
