@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { getFiles } from '../controller/adcontroller.js';
+
 const router = express.Router();
-const adController = require('../controller/adcontroller');
 
-router.get('/:id', adController.getAdById);
-router.get('/', adController.getAllAds);
+router.get('/list', getFiles);
 
-module.exports = router;
+export default router;

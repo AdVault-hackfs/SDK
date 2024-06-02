@@ -1,20 +1,19 @@
-const adService = require('../services/adservices');
+import { getFiles as getFilesFromService } from '../services/lighthouseservice.js';
 
-exports.getAdById = async (req, res) => {
+export const getFiles = async (req,res) => {
   try {
-    const adId = req.params.id;
-    const ad = await adService.fetchAdById(adId);
-    res.json(ad);
+    console.log('getFiles controller');
+    const files = await getFilesFromService();
+    console.log(files);
+    const response = files.map(file => ({
+      ...file,
+      viewableLink: `https://gateway.lighthouse.storage/ipfs/${file.cid}`
+    }));
+    console.log("response fetched");
+    res.json(response);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to retrieve ad' });
-  }
-};
-
-exports.getAllAds = async (req, res) => {
-  try {
-    const ads = await adService.fetchAllAds();
-    res.json(ads);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to retrieve ads' });
+    console.log('error in getFiles controller');
+    res.status(500).json({ error: error.message });
+    
   }
 };
