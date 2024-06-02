@@ -35,6 +35,7 @@ The server will be running on http://localhost:3000.
 #### API Endpoints
 Retrieve List of Ads
 Endpoint: GET `/ads/list`
+
 Description: Retrieves a list of ads stored in Lighthouse storage.
 
 Sample Response:
